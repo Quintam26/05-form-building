@@ -51,7 +51,7 @@ articleView.handleMainNav = () => {
         $('.tab-content').hide();
         $(`#${$(this).attr('data-content')}`).fadeIn();
     });
-    
+
     $('.main-nav .tab:first').click();
 };
 
@@ -104,6 +104,18 @@ articleView.initNewArticlePage = () => {
 articleView.create = () => {
     // TODO: Set up a variable to hold the new article we are creating.
     // Clear out the #articles element, so we can put in the updated preview
+    const data = {
+
+        title:$('#new-title').val(),
+        body:$('#new-body').val(),
+        author:$('#new-author').val(),
+        authorURL:$('#new-website').val(),
+        category:$('#new-category').val(),
+        publishedOn:$('#new-is-published').val()
+
+    };
+
+    const article = new Article(data);
 
 
     // TODO: Instantiate an article based on what's in the form fields:
